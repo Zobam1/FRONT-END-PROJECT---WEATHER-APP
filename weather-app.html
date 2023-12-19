@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="weather-app.css" />
+    <title>My weather application</title>
+  </head>
+  <body>
+    <div class="main-body">
+      <header>
+        <form id="form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="input"
+            id="city-input"
+          />
+          <input type="submit" value="Search" class="search" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1>Paris</h1>
+            <p>
+              <span id="date">Saturday 15:32</span>, moderate rain <br />
+              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div>
+            <span class="sun">☀️</span> <span class="temp" id="temps">14</span
+            ><span class="degree">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="#" target="_blank">Nnoje Chizobam</a> and is
+          <a href="#" target="_blank"> on GitHub</a> and
+          <a href="#" target="_blank">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+    <script src="weather-app.js"></script>
+  </body>
+</html>
