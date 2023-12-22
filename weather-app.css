@@ -53,7 +53,7 @@ strong {
   font-family: Roboto, sans-serif;
   position: relative;
   right: 20px;
-  top: 20px;
+  top: -10px;
   font-weight: bolder;
 }
 .sun {
@@ -68,7 +68,7 @@ strong {
   font-family: Roboto, sans-serif;
   position: relative;
   right: 25px;
-  top: -30px;
+  top: -50px;
 }
 footer {
   color: #27214266;
