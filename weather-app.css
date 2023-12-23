@@ -70,6 +70,14 @@ strong {
   right: 25px;
   top: -50px;
 }
+.forecast-section {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+.forecast-icon {
+  padding: 10px;
+}
 footer {
   color: #27214266;
   text-align: center;

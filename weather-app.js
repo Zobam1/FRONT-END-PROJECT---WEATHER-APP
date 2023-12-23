@@ -39,7 +39,17 @@ function callAxios(event) {
 
   axios.get(url).then(showValues);
 }
-
+function forecast() {
+  let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+  let forecastSection = document.querySelector("#forecast-section");
+  days.forEach(function (day) {
+    forecastSection.innerHTML += `<span
+          ><div>${day}</div>
+          <div class="forecast-icon">🌦️</div>
+          <div><span>22 </span><span>17</span></div></span
+        >`;
+  });
+}
 let grabForm = document.querySelector("#form");
 grabForm.addEventListener("submit", callAxios);
 
@@ -48,3 +58,4 @@ axios
     "https://api.shecodes.io/weather/v1/current?query=paris&key=at32a2043d2f18b00363437fb0ffa1ob&units=metric"
   )
   .then(showValues);
+forecast();
