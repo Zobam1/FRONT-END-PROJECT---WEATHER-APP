@@ -30,26 +30,35 @@ function showCurrent(response) {
   let minute = urlDate.getMinutes();
   grabDate.innerHTML = `${day}, ${hour}:${minute}`;
 }
+//create a function to extract day from api
+function getUrlDay(urltime) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let newDay = new Date(urltime * 1000);
+  return days[newDay.getDay()];
+}
 
 //function to change html elements for forecast section
 function showForecast(response) {
-  let forecastDays = response.data.daily.slice(0, 5);
-
-  forecastDays.forEach(function (row) {
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-    let newDay = new Date(row.time * 1000);
-    let day = days[newDay.getDay()];
-    let forecastSection = document.querySelector("#forecast-section");
-    let imageUrl = row.condition.icon_url;
-    let minTemp = row.temperature.minimum;
-    let maxTemp = row.temperature.maximum;
-    forecastSection.innerHTML += `<span
+  let forecastDays = response.data.daily;
+  let forecastSectionInnerHtml = "";
+  forecastDays.forEach(function (row, index) {
+    if (index < 5) {
+      let forecastSection = document.querySelector("#forecast-section");
+      let day = getUrlDay(row.time);
+      let imageUrl = row.condition.icon_url;
+      let minTemp = row.temperature.minimum;
+      let maxTemp = row.temperature.maximum;
+      forecastSectionInnerHtml =
+        forecastSectionInnerHtml +
+        `<span
           ><div>${day}</div>
           <img src=${imageUrl} />
           <div><span>${Math.round(maxTemp)} </span><span>${Math.round(
-      minTemp
-    )}</span></div></span
+          minTemp
+        )}</span></div></span
         >`;
+      forecastSection.innerHTML = forecastSectionInnerHtml;
+    }
   });
 }
 //function to get the url of both current and forecast weather api
