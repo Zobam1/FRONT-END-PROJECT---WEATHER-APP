@@ -53,9 +53,11 @@ function showForecast(response) {
         `<span
           ><div>${day}</div>
           <img src=${imageUrl} />
-          <div><span>${Math.round(maxTemp)} </span><span>${Math.round(
+          <div><span class ="forecast-maxdegree">${Math.round(
+            maxTemp
+          )}° </span><span class="forecast-mindegree"> ${Math.round(
           minTemp
-        )}</span></div></span
+        )}°</span></div></span
         >`;
       forecastSection.innerHTML = forecastSectionInnerHtml;
     }

@@ -87,3 +87,10 @@ footer {
 a {
   color: #885df1;
 }
+.forecast-maxdegree {
+  color: #f65282;
+  font-weight: bold;
+}
+.forecast-mindegree {
+  color: #f65282;
+}
